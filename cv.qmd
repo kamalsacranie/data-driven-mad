@@ -1,0 +1,249 @@
+---
+author:
+  - name: Kamal  Sacranie 
+    email: "*sacranie.work@gmail.com*"
+    github: kamalsacranie
+from: markdown+emoji
+filters:
+  - highlight-text
+format:
+  typst:
+    # mainfont: "EB Garamond"
+    # fontsize: 11pt
+    mainfont: "Comic Sans Pro"
+    fontsize: 10pt
+    keep-typ: true
+    template-partials:
+    - typst-template.typ
+    - typst-show.typ
+    margin:
+      x: 1.5cm
+      y: 1cm
+---
+
+```{python}
+#| echo: false
+# If we wanted to make this library proper, we would separate the actual strings
+# from the html functions by way of some classes with __str__ methods and
+# essentually build an abstract syntax tree
+import html
+from IPython.display import Markdown, display
+from pathlib import Path
+import os
+import json
+from dataclasses import dataclass
+
+# Get the directory of the current script
+SCRIPT_DIR = Path(os.path.dirname(os.path.abspath("__file__"))) / "mock-api"
+
+def dummy_request(path: list[str]):
+  sd = SCRIPT_DIR
+  for s in path:
+    sd = sd / s
+  result = ""
+  with open(sd) as f:
+    result = json.load(f)
+  return result
+
+def stringify_date(start: str, end: str) -> str:
+  return f"{start} --- {end}"
+
+def surround_tag(tag_name, **kwargs):
+  attrs = " ".join(f'{k}="{v}"' for k, v in kwargs.items() if v)
+  return (lambda x: f"<{tag_name} {attrs}>{x}</{tag_name}>")
+
+def list_item(point):
+  return surround_tag("li")(point)
+  
+def list_items(points: list):
+  return "\n".join(list_item(point) for point in points)
+
+def ulist(points: list):
+  return surround_tag("ul")(list_items(points))
+
+def table_data(inner, colspan=None, align=None):
+  return surround_tag("td", colspan=colspan, style=f"text-align:{align};" if align else None)(inner)
+
+def qmd_raw(markdown_raw):
+  return f"""<span data-qmd="{html.escape(markdown_raw)}" />"""
+
+def qmd_table(html_table):
+  return f"""
+```{{=html}}
+  {html_table}
+```"""
+```
+
+```{=typst}
+#set par(leading: 0.5em)
+#set table(inset: (x: 0pt, y: 2.5pt))
+#show highlight: it => rotate(it, -2deg)
+#set text(kerning: true, alternates: true, ligatures: true, number-type: "old-style")
+#show heading: it => {
+  let heading_offset = 1.2em
+  let spacing = 0.35em
+  let post_heading_rule = align(horizon)[#line(
+    stroke: 0.5pt,
+    length: 100% - spacing + heading_offset - measure(it.body).width - 1em
+  )]
+  block(
+    move(dx: -heading_offset, stack(
+      dir: ltr,
+      text(it.body, stylistic-set: 1),
+      h(spacing),
+      move(dy: 0.43em, post_heading_rule)
+    )),
+    above: 0.7em, below: 0.4em
+  )
+}
+
+#set block(spacing: 0pt)
+#show par: set block(spacing: 0.65em)
+```
+
+While starting my career as an Equity Analyst at RSM pursuing my ACA, I quit. I
+simply couldn't deny that I loved Software Engineering. I quit to do an Masters
+in AI & Computer Science, where my dissertation involved building a compiler for
+my own programming language for Mathematical Linear Programming. Looking back on
+a stellar academic academic record, and now working on Lloyds Banking Group's
+flagship Pension App, I see now that quitting was the best decision I've ever
+made.
+
+```{=typst}
+#set par(justify: false)
+```
+
+:::: {layout="[0.3, 0.7]"}
+::: {#first-column}
+# [Specialties]{style="font-variant:small-caps"}
+
+**Languages I love to use:** OCaml, Haskell, C++, Kotlin, Lua
+
+**Language I have to use:** Python, Typescript
+
+**Virtue signals:** I use neovim and maintain some plugins
+:::
+
+::: {#second-column}
+# [Education ]{style="font-variant:small-caps"}
+
+<!-- +:----------------------------+:----------------------------:+----------------:+ -->
+<!-- | **University of             | *MSc. Computer Science (AI)* | 9/23 --- 9/24   | -->
+<!-- | Nottingham**                |                              |                 | -->
+<!-- +-----------------------------+------------------------------+-----------------+ -->
+<!-- |                                                                              | -->
+<!-- | [Classification]{style="font-variant:small-caps"}: Distinction\              | -->
+<!-- | [Dissertation]{style="font-variant:small-caps"}: Compiler for Linear         | -->
+<!-- | Optimisation problems implemented in OCaml                                   | -->
+<!-- |                                                                              | -->
+<!-- +-----------------------------+------------------------------+-----------------+ -->
+
+```{python}
+#| echo: false
+@dataclass
+class Education:
+  institution: str
+  qualification: str
+  start_date: str
+  end_date: str
+  data: dict[str, str]
+
+def stringify_education_data(data: dict[str, str]) -> str:
+  md_newline = "\\\n"
+  return md_newline.join(
+    [
+      f"[{key}]{{style='font-variant:small-caps'}}: {val}"
+      for key, val in data.items()
+    ]
+  )
+
+def university(entry: Education):
+  return Markdown(qmd_table(surround_tag("table")(f"""
+    <tr>
+      {table_data(f"<strong>{qmd_raw(entry.institution)}</strong>", align="left", colspan=2)}
+      {table_data(qmd_raw(f"[{entry.qualification}]{{bg-colour='#DDDDDD'}}"), align="center", colspan=2)}
+      {table_data(qmd_raw(stringify_date(entry.start_date, entry.end_date)), align="right")}
+    </tr>
+    <tr>
+      {table_data(
+        f"<div>{qmd_raw(stringify_education_data(entry.data))}</div>",
+        colspan=5
+      )}
+    </tr>
+""")))
+
+for uni in dummy_request(["education.json"]):
+  display(university(Education(**uni)))
+```
+:::
+::::
+
+# [Experience]{style="font-variant:small-caps"}
+
+<!-- +:----------------------+:-----------------------:+---------------------------:+ -->
+<!-- | **Lloyds Banking      |  [*Android Developer*   | 9/24 --- today             | -->
+<!-- | Group**               |  ]{bg-colour="#DDDDDD"} |                            | -->
+<!-- +-----------------------+-------------------------+----------------------------+ -->
+<!-- |                                                                              | -->
+<!-- | - Responsible for data analysis, manipulation, and visualization using Alte  | -->
+<!-- |   Automate workflows and Excel pipelines using VBA to minimise repetitive ta | -->
+<!-- | - Responsible for the application of IFRS 16 when listing companies on the A | -->
+<!-- | - Small team of 10 requiring the ability to be agile and adapt to changing d | -->
+<!-- | - Simultaneous ACA exams utilised my strong time-management skills to take r | -->
+<!-- |                                                                              | -->
+<!-- +-----------------------+-------------------------+----------------------------+ -->
+
+```{python}
+#| echo: false
+@dataclass
+class WorkExp:
+  employer: str
+  role: str
+  start_date: str
+  end_date: str
+  data: list[str]
+
+def experience(entry: WorkExp):
+  return Markdown(qmd_table(surround_tag("table")(f"""
+    <tr>
+      {table_data(
+        f"<strong>{qmd_raw(entry.employer)}</strong>", align="left"
+      )}
+      {table_data(
+        f"<em>{qmd_raw(f"[*{entry.role}*]{{bg-colour='#DDDDDD'}}")}</em>", align="center"
+      )}
+      {table_data(
+        qmd_raw(stringify_date(entry.start_date, entry.end_date)), align="right"
+      )}
+    </tr>
+    <tr>
+      {table_data(ulist([qmd_raw(e) for e in entry.data]), colspan=3)}
+    </tr>
+""")))
+
+for we in dummy_request(["work-experience.json"]):
+  display(experience(WorkExp(**we)))
+```
+
+# [Projects]{style="font-variant:small-caps"}
+
+```{python}
+#| echo: false
+@dataclass
+class Project:
+  name: str
+  description: str
+
+def project(proj: Project):
+  project = lambda p: table_data(qmd_raw(f'**{p}**'), align="left")
+  description = lambda d: table_data(surround_tag("div")(qmd_raw(d)), colspan=5, align="left")
+  return surround_tag("tr")(f"{project(proj.name)}{description(proj.description)}")
+
+def projects(projects: list[Project]):
+  table_rows = (project(proj) for proj in projects)
+  return Markdown(qmd_table(surround_tag("table")("".join(table_rows))))
+
+projects_res = [Project(**res) for res in (dummy_request(["projects.json"]))]
+
+display(projects(projects_res))
+```

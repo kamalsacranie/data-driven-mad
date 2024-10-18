@@ -1,0 +1,14 @@
+[
+    {
+        "name": "yutori",
+        "description": "A programming language for describing Linear Optimisation prblems. We create an *abstract syntax tree* of symbolic algebraic algebra. A computer algebra system then simplifies the expressions."
+    },
+    {
+        "name": "[Anki-Panky](https://github.com/kamalsacranie/anki-panky)",
+        "description": "Markdown to [Anki](https://apps.ankiweb.net) deck compilation programme written in haskell. Parse Markdown using [Pandoc](https://pandoc.org) to produce individual card ASTs which are then compiled into an Anki database."
+    },
+    {
+        "name": "OCamlbinators",
+        "description": "A novel parser combinator library for creating source-mapped ASTs useful for creating developer tooling. Source metadata data can be colocated with AST data types which can be used by tooling for great static analysis."
+    }
+]

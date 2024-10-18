@@ -1,0 +1,21 @@
+[
+    {
+        "institution": "University of Nottingham",
+        "qualification": "MSc. Computer Science (AI)",
+        "start_date": "9/23",
+        "end_date": "9/24",
+        "data": {
+            "Classification": "Distinction",
+            "Highlights": "Made a language for Linear Optimisation problems in OCaml; Made a UNet to segment flowers; built a game engine"
+        }
+    },
+    {
+        "institution": "London School of Economics",
+        "qualification": "BSc. Accounting & Finance",
+        "start_date": "9/19",
+        "end_date": "9/22",
+        "data": {
+            "Classification": "First Class"
+        }
+    }
+]
