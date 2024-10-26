@@ -5,10 +5,22 @@
     },
     {
         "name": "[Anki-Panky](https://github.com/kamalsacranie/anki-panky)",
-        "description": "Markdown to [Anki](https://apps.ankiweb.net) deck compilation programme written in haskell. Parse Markdown using [Pandoc](https://pandoc.org) to produce individual card ASTs which are then compiled into an Anki database."
+        "description": "Markdown to [Anki](https://apps.ankiweb.net) deck compilation programme written in Haskell. Parse Markdown using [Pandoc](https://pandoc.org) to produce individual card ASTs which are then compiled into an Anki database."
     },
     {
         "name": "OCamlbinators",
         "description": "A novel parser combinator library for creating source-mapped ASTs useful for creating developer tooling. Source metadata data can be colocated with AST data types which can be used by tooling for great static analysis."
+    },
+    {
+        "name": "Fuzzy Camls",
+        "description": "A synthetic data generator that takes a `EBNF`-style grammar and randomly generates source data based on the user-specified grammar. Developed for fuzz-testing parsers."
+    },
+    {
+        "name": "Kamal's World",
+        "description": "From-scratch game engine written in C++ using OpenGL. Objects can be parsed in or procedurally generated and textures can be applied to objects. A very OO heavy project."
+    },
+    {
+        "name": "Flower Stamp",
+        "description": "U-Net architecture neural network used to segment pictures of flowers for lazer cutting stamps."
     }
 ]

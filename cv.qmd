@@ -101,13 +101,13 @@ def qmd_table(html_table):
 #show par: set block(spacing: 0.65em)
 ```
 
-While starting my career as an Equity Analyst at RSM pursuing my ACA, I quit. I
-simply couldn't deny that I loved Software Engineering. I quit to do an Masters
-in AI & Computer Science, where my dissertation involved building a compiler for
-my own programming language for Mathematical Linear Programming. Looking back on
-a stellar academic academic record, and now working on Lloyds Banking Group's
-flagship Pension App, I see now that quitting was the best decision I've ever
-made.
+While starting my career as an Equity Analyst, I begrudgingly conceded that I
+was in the wrong industry. No regular financial analyst writes neovim plugins!
+So, I left to do a Master's in AI & Computer Science, where my chief research was
+the development of a programming language for Mathematical Linear Programming.
+Looking back on a stellar academic record, and now working on Lloyds Banking
+Group's flagship Pension App, I see now that leaving finance was the best
+decision I've ever made.
 
 ```{=typst}
 #set par(justify: false)
@@ -121,7 +121,7 @@ made.
 
 **Language I have to use:** Python, Typescript
 
-**Virtue signals:** I use neovim and maintain some plugins
+**Virtue signals:** I use neovim and love writing compilers
 :::
 
 ::: {#second-column}

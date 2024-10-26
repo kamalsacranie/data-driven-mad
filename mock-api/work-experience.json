@@ -3,10 +3,11 @@
         "employer": "Lloyds Banking Group",
         "role": "Kotlin Developer",
         "start_date": "9/24",
-        "end_date": "today",
+        "end_date": "*today*",
         "data": [
-            "Coordinated with multiple teams to implement a bespoke solution for coverage metrics for commits saving 5 minutes per PR.",
-            "..."
+            "Delivering bimonthly UI features for the flagship Scottish Widows app in close collaborations with Designers and Feature Engineers. My team are all so great, I love working with them",
+            "Coordinated with multiple teams to implement a bespoke solution for coverage metrics for commits saving 5 minutes per PR",
+            "Not much else, I just started..."
         ]
     },
     {
@@ -26,7 +27,7 @@
         "start_date": "8/22",
         "end_date": "02/23",
         "data": [
-            "Lead analysis for client sales data after creating data pipelines that funneled into managerial dashboards using Alteryx and PowerBI",
+            "Lead analyst for creating client sales data pipelines that funneled into managerial dashboards using Alteryx and PowerBI",
             "Automated Excel with VBA to minimise repetition with formal recognition for my automation efforts",
             "Small team of 10 required expert interpersonal skills to gel well with the team and produce top work",
             "Balancing work with ACA exams without skipping a beat exemplifies my high-capacity bandwidth"
@@ -38,8 +39,9 @@
         "start_date": "2021",
         "end_date": "22",
         "data": [
-            "Produce design leader for our low-cost no-maintainance web solution",
-            "We designed full stack CRUD apps which utilised static hosting in the front end and headless content management systems on the backend that made use of generous free tears to allow small businesses a free backend"
+            "Product design leader for our low-cost no-maintainance website solutions",
+            "We designed full stack CRUD apps utilising static hosting in the front end and no-cost headless content management systems on the backend making the product perfect for small businesses",
+            "Targeted small businesses with low mutability needs and no desire for ongoing maintainence. We used GitHub static hosting using the content management system to hydrate the page."
         ]
     }
 ]

@@ -25,6 +25,7 @@
     paper: paper,
     margin: margin,
     numbering: none, // if we want precise numbering, we can make this into a footer and parametarise it
+    footer: move(dx: -45pt, dy: 4pt)[#rect(fill: aqua)[#text(size: 9pt)[Made with Typst and love using my data driven CV library.]]],
   )
   set par(justify: true)
   set text(lang: lang,
