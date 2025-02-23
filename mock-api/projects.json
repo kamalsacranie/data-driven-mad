@@ -5,7 +5,7 @@
     },
     {
         "name": "[Anki-Panky](https://github.com/kamalsacranie/anki-panky)",
-        "description": "Markdown to [Anki](https://apps.ankiweb.net) deck compilation programme written in Haskell. Parse Markdown using [Pandoc](https://pandoc.org) to produce individual card ASTs which are then compiled into an Anki database."
+        "description": "Markdown to Anki deck compilation programme written in Haskell. Parse Markdown using Pandoc to produce individual card ASTs which are then compiled into an Anki database."
     },
     {
         "name": "OCamlbinators",
