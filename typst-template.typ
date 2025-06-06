@@ -26,7 +26,7 @@
     paper: paper,
     margin: margin,
     numbering: none, // if we want precise numbering, we can make this into a footer and parametarise it
-    footer: move(dx: -45pt, dy: 4pt)[#rect(fill: aqua)[#text(size: 9pt)[Made with #link("https://typst.app/docs")[Typst] and love using #link("https://github.com/kamalsacranie/data-driven-mad")[my data driven CV library]. Yes, my CV is in Comic Sans.]]],
+    footer: move(dx: -52pt, dy: 4pt)[#rect(fill: aqua)[#text(size: 9pt)[Made with #link("https://typst.app/docs")[Typst] and love using #link("https://github.com/kamalsacranie/data-driven-mad")[my data driven CV library]]]],
   )
   set par(justify: true)
   set text(lang: lang,

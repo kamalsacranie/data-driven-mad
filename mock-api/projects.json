@@ -1,19 +1,19 @@
 [
     {
         "name": "yutori",
-        "description": "A programming language for describing Linear Optimisation prblems. We create an *abstract syntax tree* of symbolic algebraic algebra. A computer algebra system then simplifies the expressions."
+        "description": "A programming language for describing Linear Optimisation problems. We create an *abstract syntax tree* of symbolic algebraic algebra. A computer algebra system then simplifies the expressions. We then have modular compiler backends."
     },
     {
         "name": "[Anki-Panky](https://github.com/kamalsacranie/anki-panky)",
         "description": "Markdown to Anki deck compilation programme written in Haskell. Parse Markdown using Pandoc to produce individual card ASTs which are then compiled into an Anki database."
     },
     {
-        "name": "OCamlbinators",
+        "name": "[Camlbinators](https://github.com/kamalsacranie/camlbinators)",
         "description": "A novel parser combinator library for creating source-mapped ASTs useful for creating developer tooling. Source metadata data can be colocated with AST data types which can be used by tooling for great static analysis."
     },
     {
-        "name": "Fuzzy Camls",
-        "description": "A synthetic data generator that takes a `EBNF`-style grammar and randomly generates source data based on the user-specified grammar. Developed for fuzz-testing parsers."
+        "name": "[Fuzzy Camls](https://github.com/kamalsacranie/fuzzy-camls)",
+        "description": "A synthetic data generator that takes an `EBNF`-style grammar and randomly generates source data based on the user-specified grammar. Developed for fuzz-testing parsers."
     },
     {
         "name": "Kamal's World",

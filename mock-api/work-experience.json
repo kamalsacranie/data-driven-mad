@@ -1,13 +1,15 @@
 [
     {
-        "employer": "Lloyds Banking Group",
-        "role": "Kotlin Developer",
+        "employer": "Lloyds Banking Group (Scottish Widows)",
+        "role": "Kotlin Android Engineer",
         "start_date": "9/24",
         "end_date": "*today*",
         "data": [
-            "Delivering bimonthly UI features for the flagship Scottish Widows app in close collaborations with Designers and Feature Engineers. My team are all so great, I love working with them",
-            "Coordinated with multiple teams to implement a bespoke solution for coverage metrics for commits saving 5 minutes per PR",
-            "Not much else, I just started..."
+            "Consistently own and deliver entire features for the flagship Scottish Widows app in close collaborations with Designers and Feature Engineers within an Agile framework",
+            "Spearheaded the design and development of a cross-platform (iOS & Android) code-generation framework in Kotlin, automating analytics boilerplate and improving developer velocity",
+            "Proactively deliver fortnightly technical seminars to colleagues on advanced topics, predominantly functional programming, fostering a culture of continuous learning",
+            "I created & own the App's PR analysis bot that enforces code coverage and testing standards by publishing a PR report, improving overall code quality and reducing regression bugs by 12%",
+            "Recognized as the highest-contributing Graduate Engineer in my cohort and entrusted as the sole Graduate Technical Assessor for in Graduate Assessment Centres"
         ]
     },
     {
@@ -16,9 +18,10 @@
         "start_date": "2/23",
         "end_date": "5/23",
         "data": [
-            "Lead engineer for Flutter app under Agile. TypeScript and Supabase postgress on the back",
-            "Architected postgress solutions using Docker to provide a standardised container for teams",
-            "Recipient of the \"Most Productive Dev\" award"
+            "Lead architect and engineer in a Flutter team with backend services built on TypeScript and Supabase (PostgreSQL).",
+            "Recipient of the \"Most Productive Dev\" award",
+            "Architected Postgress solutions using Docker to provide a standardised container for teams",
+            "Implemented CI pipelines to ensure code quality was met and unit tests were executed"
         ]
     },
     {
@@ -31,17 +34,6 @@
             "Automated Excel with VBA to minimise repetition with formal recognition for my automation efforts",
             "Small team of 10 required expert interpersonal skills to gel well with the team and produce top work",
             "Balancing work with ACA exams without skipping a beat exemplifies my high-capacity bandwidth"
-        ]
-    },
-    {
-        "employer": "WebEssence",
-        "role": "Full-stack WebDev",
-        "start_date": "2021",
-        "end_date": "22",
-        "data": [
-            "Product design leader for our low-cost no-maintainance website solutions",
-            "We designed full stack CRUD apps utilising static hosting in the front end and no-cost headless content management systems on the backend making the product perfect for small businesses",
-            "Targeted small businesses with low mutability needs and no desire for ongoing maintainence. We used GitHub static hosting using the content management system to hydrate the page."
         ]
     }
 ]

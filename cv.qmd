@@ -1,6 +1,6 @@
 ---
 author:
-  - name: Kamal  Sacranie 
+  - name: Kamal Sacranie
     email: "*sacranie.work@gmail.com*"
     github: kamalsacranie
 from: markdown+emoji
@@ -8,16 +8,16 @@ filters:
   - highlight-text
 format:
   typst:
-    # mainfont: "EB Garamond"
-    # fontsize: 11pt
-    mainfont: "Comic Sans Pro"
-    fontsize: 10pt
+    mainfont: "EB Garamond"
+    fontsize: 11pt
+    # mainfont: "Comic Sans Pro"
+    # fontsize: 10pt
     keep-typ: true
     template-partials:
     - typst-template.typ
     - typst-show.typ
     margin:
-      x: 1.5cm
+      x: 1.8cm
       y: 1cm
 ---
 
@@ -77,14 +77,14 @@ def qmd_table(html_table):
 ```{=typst}
 #set par(leading: 0.5em)
 #set table(inset: (x: 0pt, y: 2.5pt))
-#show highlight: it => rotate(it, -2deg)
+// #show highlight: it => rotate(it, -2deg)
 #set text(kerning: true, alternates: true, ligatures: true, number-type: "old-style")
 #show heading: it => {
   let heading_offset = 1.2em
   let spacing = 0.35em
   let post_heading_rule = align(horizon)[#line(
     stroke: 0.5pt,
-    length: 100% - spacing + heading_offset - measure(it.body).width - 1em
+    length: 100% - spacing + heading_offset - measure(it.body).width - 0.1em
   )]
   block(
     move(dx: -heading_offset, stack(
@@ -101,13 +101,11 @@ def qmd_table(html_table):
 #show par: set block(spacing: 0.65em)
 ```
 
-While starting my career as an Equity Analyst, I begrudgingly conceded that I
-was in the wrong industry. No regular financial analyst writes neovim plugins!
-So, I left to do a Master's in AI & Computer Science, where my chief research was
-the development of a programming language for Mathematical Linear Programming.
-Looking back on a stellar academic record, and now working on Lloyds Banking
-Group's flagship Pension App, I see now that leaving finance was the best
-decision I've ever made.
+While working as an Equity Analyst, I realised my passion lay elsewhere---no
+normal financial analyst writes Neovim plugins! I then pursued a Master's in AI
+& Computer Science, where I not only developed a novel programming language for
+Mathematical Linear Programming but also graduated Top of Class. I now work on
+Lloyds Banking Group's flagship Pension App.
 
 ```{=typst}
 #set par(justify: false)
@@ -117,15 +115,15 @@ decision I've ever made.
 ::: {#first-column}
 # [Specialties]{style="font-variant:small-caps"}
 
-**Languages I love to use:** OCaml, Haskell, C++, Kotlin, Lua
+**Languages I love to use:** OCaml, Haskell, Kotlin, Lua
 
-**Language I have to use:** Python, Typescript
+**Language I put up with:** C++, Typescript, Python
 
-**Virtue signals:** I use neovim and love writing compilers
+**Nerdy interests:** I use Neovim and love writing compilers
 :::
 
 ::: {#second-column}
-# [Education ]{style="font-variant:small-caps"}
+# [Education]{style="font-variant:small-caps"}
 
 <!-- +:----------------------------+:----------------------------:+----------------:+ -->
 <!-- | **University of             | *MSc. Computer Science (AI)* | 9/23 --- 9/24   | -->
@@ -170,6 +168,7 @@ def university(entry: Education):
         colspan=5
       )}
     </tr>
+    <tr></tr>
 """)))
 
 for uni in dummy_request(["education.json"]):
@@ -207,7 +206,7 @@ def experience(entry: WorkExp):
   return Markdown(qmd_table(surround_tag("table")(f"""
     <tr>
       {table_data(
-        f"<strong>{qmd_raw(entry.employer)}</strong>", align="left"
+        f"<strong>{qmd_raw(entry.employer)}</strong>", align="left", colspan=2
       )}
       {table_data(
         f"<em>{qmd_raw(f"[*{entry.role}*]{{bg-colour='#DDDDDD'}}")}</em>", align="center"
@@ -217,7 +216,7 @@ def experience(entry: WorkExp):
       )}
     </tr>
     <tr>
-      {table_data(ulist([qmd_raw(e) for e in entry.data]), colspan=3)}
+      {table_data(ulist([qmd_raw(e) for e in entry.data]), colspan=4)}
     </tr>
 """)))
 
@@ -247,3 +246,17 @@ projects_res = [Project(**res) for res in (dummy_request(["projects.json"]))]
 
 display(projects(projects_res))
 ```
+
++:---------------------------------------------------:+
+|                                                     |
++-----------------------------------------------------+
+|                                                     |
++-----------------------------------------------------+
+|                                                     |
++-----------------------------------------------------+
+|                                                     |
++-----------------------------------------------------+
+|                                                     |
++-----------------------------------------------------+
+| **Fun fact:** I have a diploma in classical singing |
++-----------------------------------------------------+
