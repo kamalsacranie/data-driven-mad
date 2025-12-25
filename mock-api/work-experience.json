@@ -5,11 +5,11 @@
         "start_date": "9/24",
         "end_date": "*today*",
         "data": [
+            "Lead engineer for KMP mobile tooling libraries utilising Compose Multiplatform for Mobile, Desktop, and WASM targets",
             "Consistently own and deliver entire features for the flagship Scottish Widows app in close collaborations with Designers and Feature Engineers within an Agile framework",
             "Spearheaded the design and development of a cross-platform (iOS & Android) code-generation framework in Kotlin, automating analytics boilerplate and improving developer velocity",
             "Proactively deliver fortnightly technical seminars to colleagues on advanced topics, predominantly functional programming, fostering a culture of continuous learning",
-            "I created & own the App's PR analysis bot that enforces code coverage and testing standards by publishing a PR report, improving overall code quality and reducing regression bugs by 12%",
-            "Recognized as the highest-contributing Graduate Engineer in my cohort and entrusted as the sole Graduate Technical Assessor for in Graduate Assessment Centres"
+            "I created & own the App's PR analysis bot that enforces code coverage and testing standards by publishing a PR report, improving overall code quality and reducing regression bugs by 12%"
         ]
     },
     {
@@ -28,7 +28,7 @@
         "employer": "RSM UK",
         "role": "Equity Analyst",
         "start_date": "8/22",
-        "end_date": "02/23",
+        "end_date": "2/23",
         "data": [
             "Lead analyst for creating client sales data pipelines that funneled into managerial dashboards using Alteryx and PowerBI",
             "Automated Excel with VBA to minimise repetition with formal recognition for my automation efforts",
